@@ -1,4 +1,4 @@
-"use client"
+'use client'
 
 import Link from 'next/link'
 import { AiOutlineClose, AiOutlineMenu } from 'react-icons/ai'
@@ -26,44 +26,44 @@ const Navbar = () => {
     <div
       className={
         shadow
-          ? 'fixed w-full h-20 shadow-xl z-[100] ease-in-out duration-300 bg-[#ecf0f3]'
-          : 'fixed w-full h-20 z-[100]'
+          ? 'fixed z-[100] h-20 w-full bg-[#ecf0f3] shadow-xl duration-300 ease-in-out'
+          : 'fixed z-[100] h-20 w-full'
       }
     >
-      <div className="flex justify-between items-center w-full h-full px-2 2xl:px-16">
+      <div className="flex h-full w-full items-center justify-between px-2 2xl:px-16">
         <div>
           <ul className="hidden md:flex">
             <Link
               href="/#home"
-              className="ml-10 text-sm uppercase hover:border-b"
+              className="ml-10 inline-block text-sm uppercase transition-all duration-300 hover:scale-125 hover:text-[#5651e5]"
               scroll={false}
             >
               Home
             </Link>
             <Link
               href="/#about"
-              className="ml-10 text-sm uppercase hover:border-b"
+              className="ml-10 inline-block text-sm uppercase transition-all duration-300 hover:scale-125 hover:text-[#5651e5]"
               scroll={false}
             >
               About
             </Link>
             <Link
               href="/#skills"
-              className="ml-10 text-sm uppercase hover:border-b"
+              className="ml-10 inline-block text-sm uppercase transition-all duration-300 hover:scale-125 hover:text-[#5651e5]"
               scroll={false}
             >
               Skills
             </Link>
             <Link
               href="/#projects"
-              className="ml-10 text-sm uppercase hover:border-b"
+              className="ml-10 inline-block text-sm uppercase transition-all duration-300 hover:scale-125 hover:text-[#5651e5]"
               scroll={false}
             >
               Projects
             </Link>
             <Link
               href="/#contact"
-              className="ml-10 text-sm uppercase hover:border-b"
+              className="ml-10 inline-block text-sm uppercase transition-all duration-300 hover:scale-125 hover:text-[#5651e5]"
               scroll={false}
             >
               Contact
@@ -77,32 +77,32 @@ const Navbar = () => {
 
       <div
         className={
-          nav ? 'md:hidden fixed left-0 top-0 w-full h-screen bg-black/70' : ''
+          nav ? 'fixed top-0 left-0 h-screen w-full bg-black/70 md:hidden' : ''
         }
       >
         <div
           className={
             nav
-              ? 'md:hidden fixed left-0 top-0 w-[75%] sm:w-[60%] md:w-[45%] h-screen bg-[#ecf0f3] p-10 ease-in duration-500'
-              : 'fixed left-[-100%] top-0 p-10 ease-in duration-500'
+              ? 'fixed top-0 left-0 h-screen w-[75%] bg-[#ecf0f3] p-10 duration-500 ease-in sm:w-[60%] md:hidden md:w-[45%]'
+              : 'fixed top-0 left-[-100%] p-10 duration-500 ease-in'
           }
         >
           <div>
-            <div className=" flex w-full items-center justify-end">
+            <div className="flex w-full items-center justify-end">
               <div
                 onClick={handleNav}
-                className="rounded-full shadow-lg shadow-gray-400 p-3 cursor-pointer"
+                className="cursor-pointer rounded-full p-3 shadow-lg shadow-gray-400"
               >
                 <AiOutlineClose />
               </div>
             </div>
-            <div className="border-b border-gray-300 my-4">
-              <p className="w-[85%] md:w-[85%] py-4">
+            <div className="my-4 border-b border-gray-300">
+              <p className="w-[85%] py-4 md:w-[85%]">
                 Let`s Build Something Amazing Together
               </p>
             </div>
           </div>
-          <div className="py-4 flex flex-col">
+          <div className="flex flex-col py-4">
             <ul className="uppercase">
               <Link href={'/#home'}>
                 <li
