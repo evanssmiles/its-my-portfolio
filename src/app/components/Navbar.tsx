@@ -35,42 +35,45 @@ const Navbar = () => {
           <ul className="hidden md:flex">
             <Link
               href="/#home"
-              className="ml-10 inline-block text-sm uppercase transition-all duration-300 hover:scale-125 hover:text-[#5651e5]"
+              className="ml-10 inline-block text-sm font-medium text-[#1f2937] uppercase transition-all duration-300 hover:scale-125 hover:text-[#5651e5]"
               scroll={false}
             >
               Home
             </Link>
             <Link
               href="/#about"
-              className="ml-10 inline-block text-sm uppercase transition-all duration-300 hover:scale-125 hover:text-[#5651e5]"
+              className="ml-10 inline-block text-sm font-medium text-[#1f2937] uppercase transition-all duration-300 hover:scale-125 hover:text-[#5651e5]"
               scroll={false}
             >
               About
             </Link>
             <Link
               href="/#skills"
-              className="ml-10 inline-block text-sm uppercase transition-all duration-300 hover:scale-125 hover:text-[#5651e5]"
+              className="ml-10 inline-block text-sm font-medium text-[#1f2937] uppercase transition-all duration-300 hover:scale-125 hover:text-[#5651e5]"
               scroll={false}
             >
               Skills
             </Link>
             <Link
               href="/#projects"
-              className="ml-10 inline-block text-sm uppercase transition-all duration-300 hover:scale-125 hover:text-[#5651e5]"
+              className="ml-10 inline-block text-sm font-medium text-[#1f2937] uppercase transition-all duration-300 hover:scale-125 hover:text-[#5651e5]"
               scroll={false}
             >
               Projects
             </Link>
             <Link
               href="/#contact"
-              className="ml-10 inline-block text-sm uppercase transition-all duration-300 hover:scale-125 hover:text-[#5651e5]"
+              className="ml-10 inline-block text-sm font-medium text-[#1f2937] uppercase transition-all duration-300 hover:scale-125 hover:text-[#5651e5]"
               scroll={false}
             >
               Contact
             </Link>
           </ul>
           <div className="md:hidden" onClick={handleNav}>
-            <AiOutlineMenu size={25} />
+            <AiOutlineMenu
+              size={25}
+              className="text-[#1f2937] transition-colors duration-300 hover:text-[#5651e5]"
+            />
           </div>
         </div>
       </div>
@@ -91,14 +94,14 @@ const Navbar = () => {
             <div className="flex w-full items-center justify-end">
               <div
                 onClick={handleNav}
-                className="cursor-pointer rounded-full p-3 shadow-lg shadow-gray-400"
+                className="cursor-pointer rounded-full p-3 shadow-lg shadow-gray-400 transition-colors duration-300 hover:text-[#5651e5]"
               >
                 <AiOutlineClose />
               </div>
             </div>
             <div className="my-4 border-b border-gray-300">
-              <p className="w-[85%] py-4 md:w-[85%]">
-                Let`s Build Something Amazing Together
+              <p className="w-[85%] py-4 text-[#1f2937] md:w-[85%]">
+                Let`s Turn Ideas Into Reality
               </p>
             </div>
           </div>
@@ -106,50 +109,40 @@ const Navbar = () => {
             <ul className="uppercase">
               <Link href={'/#home'}>
                 <li
-                  onClick={() => {
-                    setNav(false)
-                  }}
-                  className="py-4 text-sm"
+                  onClick={() => setNav(false)}
+                  className="py-4 text-sm font-medium text-[#1f2937] uppercase transition-colors duration-300 hover:text-[#5651e5]"
                 >
                   Home
                 </li>
               </Link>
               <Link href={'/#about'}>
                 <li
-                  onClick={() => {
-                    setNav(false)
-                  }}
-                  className="py-4 text-sm"
+                  onClick={() => setNav(false)}
+                  className="py-4 text-sm font-medium text-[#1f2937] uppercase transition-colors duration-300 hover:text-[#5651e5]"
                 >
                   About
                 </li>
               </Link>
               <Link href={'/#skills'}>
                 <li
-                  onClick={() => {
-                    setNav(false)
-                  }}
-                  className="py-4 text-sm"
+                  onClick={() => setNav(false)}
+                  className="py-4 text-sm font-medium text-[#1f2937] uppercase transition-colors duration-300 hover:text-[#5651e5]"
                 >
                   Skills
                 </li>
               </Link>
               <Link href={'/#projects'}>
                 <li
-                  onClick={() => {
-                    setNav(false)
-                  }}
-                  className="py-4 text-sm"
+                  onClick={() => setNav(false)}
+                  className="py-4 text-sm font-medium text-[#1f2937] uppercase transition-colors duration-300 hover:text-[#5651e5]"
                 >
                   Projects
                 </li>
               </Link>
               <Link href={'/#contact'}>
                 <li
-                  onClick={() => {
-                    setNav(false)
-                  }}
-                  className="py-4 text-sm"
+                  onClick={() => setNav(false)}
+                  className="py-4 text-sm font-medium text-[#1f2937] uppercase transition-colors duration-300 hover:text-[#5651e5]"
                 >
                   Contact
                 </li>
