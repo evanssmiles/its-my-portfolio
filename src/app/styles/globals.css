@@ -26,6 +26,30 @@
   animation: float 6s ease-in-out infinite;
 }
 
+.ripple-splash {
+  position: fixed;
+  width: 20px;
+  height: 20px;
+  margin-left: -10px;
+  margin-top: -10px;
+  border-radius: 9999px;
+  background: radial-gradient(circle, #5651e5 0%, #709dff 60%, transparent 80%);
+  opacity: 0.6;
+  transform: scale(0);
+  animation: ripple-expand 0.8s ease-out forwards;
+}
+
+@keyframes ripple-expand {
+  0% {
+    transform: scale(0);
+    opacity: 0.6;
+  }
+  100% {
+    transform: scale(8);
+    opacity: 0;
+  }
+}
+
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
