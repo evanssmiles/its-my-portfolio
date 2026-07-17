@@ -33,8 +33,8 @@ export default function Main() {
             A Mobile & Frontend Developer
           </h2>
           <p className="m-auto max-w-[90%] py-4 text-gray-600 sm:max-w-[500px]">
-            Mobile & Frontend Engineer with 5+ years of experience specializing
-            in React Native, ReactJS, and Flutter.
+            Mobile & Frontend Engineer with {aboutMe.yearsOfExperience}+ years
+            of experience specializing in React Native, ReactJS, and Flutter.
           </p>
           <div className="flex justify-center py-4">
             <a href="/resume.pdf" download>

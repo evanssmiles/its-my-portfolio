@@ -36,35 +36,30 @@ const Navbar = () => {
             <Link
               href="/#home"
               className="ml-10 inline-block text-sm font-medium text-[#1f2937] uppercase transition-all duration-300 hover:scale-125 hover:text-[#5651e5]"
-              scroll={false}
             >
               Home
             </Link>
             <Link
               href="/#about"
               className="ml-10 inline-block text-sm font-medium text-[#1f2937] uppercase transition-all duration-300 hover:scale-125 hover:text-[#5651e5]"
-              scroll={false}
             >
               About
             </Link>
             <Link
               href="/#skills"
               className="ml-10 inline-block text-sm font-medium text-[#1f2937] uppercase transition-all duration-300 hover:scale-125 hover:text-[#5651e5]"
-              scroll={false}
             >
               Skills
             </Link>
             <Link
               href="/#projects"
               className="ml-10 inline-block text-sm font-medium text-[#1f2937] uppercase transition-all duration-300 hover:scale-125 hover:text-[#5651e5]"
-              scroll={false}
             >
               Projects
             </Link>
             <Link
               href="/#contact"
               className="ml-10 inline-block text-sm font-medium text-[#1f2937] uppercase transition-all duration-300 hover:scale-125 hover:text-[#5651e5]"
-              scroll={false}
             >
               Contact
             </Link>
