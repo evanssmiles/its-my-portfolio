@@ -1,11 +1,26 @@
 import { AiOutlineDownload, AiOutlineMail } from 'react-icons/ai'
 import { FaLinkedinIn, FaGithub } from 'react-icons/fa'
 import Link from 'next/link'
+import Image from 'next/image'
 import aboutMe from '@/app/data/aboutMe'
 
 export default function Main() {
   return (
-    <div id="home" className="w-full text-center">
+    <div id="home" className="relative w-full overflow-hidden text-center">
+      {/* Floating Image Section */}
+      <div className="absolute top-1/2 right-[-100px] -z-10 hidden -translate-y-1/2 md:right-[-60px] md:block lg:right-[20px]">
+        <div className="absolute inset-0 h-[400px] w-[400px] rounded-full bg-[#5651e5]/20 blur-3xl" />
+        <Image
+          src="/assets/isometric-nobg.png"
+          alt=""
+          width={500}
+          height={500}
+          priority
+          className="animate-float relative w-[350px] opacity-80 md:w-[420px] lg:w-[480px]"
+        />
+      </div>
+
+      {/* Main Section */}
       <div className="mx-auto flex h-screen w-full max-w-[1240px] flex-col items-center justify-center p-2 pt-20">
         <div>
           <p className="text-sm font-semibold tracking-[0.2em] text-gray-500 uppercase">
