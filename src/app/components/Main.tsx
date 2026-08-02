@@ -60,11 +60,6 @@ export default function Main() {
     }
   }, [])
 
-  // Reveal each photo only once its image data has actually finished
-  // loading — not on a fixed timer. On iOS Safari, fading in an <img>
-  // that has CSS filters (grayscale/brightness/contrast/drop-shadow)
-  // applied while it's still decoding can show a colored placeholder
-  // flash. Waiting for onLoad avoids that entirely.
   useEffect(() => {
     if (desktopPhotoLoaded && photoRef.current) {
       gsap.fromTo(
@@ -91,24 +86,20 @@ export default function Main() {
       data-navbar-theme="dark"
       className="relative min-h-screen w-full overflow-hidden bg-[#0a0a0a] md:h-screen"
     >
-      {/* Right gradient panel — full height, full bleed, sits behind everything */}
       <div className="absolute inset-y-0 right-12 hidden w-full md:block md:w-[38%] lg:w-[32%]">
         <div className="absolute inset-0 bg-gradient-to-br from-[#ff6b4a] via-[#e8497a] to-[#5651e5]" />
 
-        {/* Black vignette fading in from the top-left corner */}
+        {/* Black vignette */}
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_0%_0%,rgba(0,0,0,0.65),transparent_45%)]" />
 
-        {/* Soft dark wave/blob shapes for depth, like a layered spiral */}
         <div className="absolute top-[15%] -right-16 h-80 w-80 rounded-full bg-black/25 blur-3xl" />
         <div className="absolute -right-24 bottom-[10%] h-96 w-96 rounded-full bg-[#3a0ca3]/45 blur-3xl" />
         <div className="absolute bottom-[-5%] left-[10%] h-64 w-64 rounded-full bg-black/30 blur-3xl" />
 
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_20%,rgba(255,255,255,0.12),transparent_55%)]" />
 
-        {/* Soft blend into the black section instead of a hard seam */}
         <div className="absolute inset-0 bg-gradient-to-r from-black/50 via-transparent to-transparent" />
 
-        {/* Photo — natural proportions, gap below nav, only slight bleed */}
         <div
           ref={photoRef}
           className="absolute top-28 bottom-0 left-[-32%] z-10 w-auto opacity-0 md:top-32 lg:top-36"
@@ -157,7 +148,7 @@ export default function Main() {
             className="mt-6 flex flex-col items-center gap-4 opacity-0 sm:flex-row sm:justify-center md:justify-start"
           >
             <a href="/resume.pdf" download>
-              <button className="flex items-center gap-2 rounded-xl bg-[#ff6b4a] bg-none px-6 py-3 text-sm font-semibold text-white uppercase shadow-xl shadow-[#ff6b4a]/20 transition-transform duration-300 hover:scale-105 lg:px-7 lg:py-3.5">
+              <button className="flex items-center gap-2 rounded-xl bg-[#ff6b4a] px-6 py-3 text-sm font-semibold text-white uppercase shadow-xl shadow-[#ff6b4a]/20 transition-transform duration-300 hover:scale-105 lg:px-7 lg:py-3.5">
                 <AiOutlineDownload className="animate-bounce" size={16} />
                 Download Resume
               </button>
@@ -171,7 +162,7 @@ export default function Main() {
             </Link>
           </div>
 
-          {/* Social row, replacing "Expertise in" */}
+          {/* Social row */}
           <div ref={socialRef} className="mt-10 opacity-0">
             <p className="mb-3 text-xs font-semibold tracking-[0.2em] text-gray-500 uppercase">
               Connect With Me
@@ -195,7 +186,7 @@ export default function Main() {
             </div>
           </div>
 
-          {/* Mobile-only photo, sits below social icons, flush with section bottom */}
+          {/* Mobile only photo */}
           <div
             ref={mobilePhotoRef}
             className="relative mx-auto mt-10 w-[220px] opacity-0 sm:w-[260px] md:hidden"
@@ -214,13 +205,11 @@ export default function Main() {
         </div>
       </div>
 
-      {/* Bottom-left scroll indicator */}
       <div className="absolute bottom-8 left-2 hidden items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-xs text-gray-400 md:left-8 md:flex lg:left-16">
         Scroll down to know more
         <span className="animate-bounce">↓</span>
       </div>
 
-      {/* Bottom-right rotating contact badge */}
       <Link
         href={'/#contact'}
         scroll={false}

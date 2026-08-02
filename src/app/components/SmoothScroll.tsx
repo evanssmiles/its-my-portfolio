@@ -2,6 +2,10 @@
 
 import { useEffect } from 'react'
 import Lenis from 'lenis'
+import gsap from 'gsap'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
+
+gsap.registerPlugin(ScrollTrigger)
 
 const SCROLL_KEY = 'scrollY'
 
@@ -11,10 +15,6 @@ export default function SmoothScroll() {
       window.history.scrollRestoration = 'manual'
     }
 
-    // A leftover URL hash (e.g. "#projects" from a nav click) makes
-    // the browser auto-jump to that section on every reload,
-    // regardless of where you actually scrolled to. Strip it so
-    // reload reflects your real last position instead.
     if (window.location.hash) {
       window.history.replaceState(
         null,
@@ -37,21 +37,24 @@ export default function SmoothScroll() {
     // Sync Lenis's internal position to match the restored position
     lenis.scrollTo(restoreY, { immediate: true })
 
-    // Keep a running record of scroll position so the next reload
-    // knows where to restore to
     lenis.on('scroll', ({ scroll }: { scroll: number }) => {
       sessionStorage.setItem(SCROLL_KEY, String(scroll))
+      ScrollTrigger.update()
     })
 
-    function raf(time: number) {
-      lenis.raf(time)
-      requestAnimationFrame(raf)
-    }
+    // Use GSAP own ticker
+    gsap.ticker.add((time) => {
+      lenis.raf(time * 1000)
+    })
+    gsap.ticker.lagSmoothing(0)
 
-    requestAnimationFrame(raf)
+    window.addEventListener('load', () => ScrollTrigger.refresh())
 
     return () => {
       lenis.destroy()
+      gsap.ticker.remove((time) => {
+        lenis.raf(time * 1000)
+      })
     }
   }, [])
 

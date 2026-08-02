@@ -22,9 +22,6 @@ export default function NavbarMobileMenu({ shadow }: NavbarMobileMenuProps) {
     setNav((prev) => !prev)
   }
 
-  // While the fullscreen menu is open, the toggle button always sits
-  // on top of the white circular overlay, so force dark-on-light
-  // regardless of scroll position.
   const circleBg = nav ? 'bg-black' : shadow ? 'bg-black' : 'bg-white'
   const iconColor = nav ? 'text-white' : shadow ? 'text-white' : 'text-black'
 
@@ -92,7 +89,6 @@ export default function NavbarMobileMenu({ shadow }: NavbarMobileMenuProps) {
         )}
       </button>
 
-      {/* Fullscreen circular-reveal menu overlay */}
       <div
         ref={overlayRef}
         className="pointer-events-none fixed inset-0 z-[95] flex items-center bg-[#ecf0f3] [clip-path:circle(0%_at_100%_0%)] md:hidden"

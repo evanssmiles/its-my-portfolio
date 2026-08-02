@@ -102,6 +102,6 @@ html {
   }
 
   button {
-    @apply rounded-xl bg-gradient-to-r from-[#5651e5] to-[#709dff] text-white uppercase shadow-xl shadow-gray-400;
+    @apply rounded-xl bg-gradient-to-r from-[#ff6b4a] to-[#ff9a6c] text-white uppercase shadow-xl shadow-[#ff6b4a]/30;
   }
 }
