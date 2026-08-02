@@ -22,6 +22,19 @@
   }
 }
 
+@keyframes spin-slow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin-slow {
+  animation: spin-slow 10s linear infinite;
+}
+
 .animate-float {
   animation: float 6s ease-in-out infinite;
 }
@@ -72,6 +85,7 @@ html {
   h4,
   h5,
   h6 {
+    font-family: var(--font-heading), sans-serif;
     @apply font-bold;
   }
 
