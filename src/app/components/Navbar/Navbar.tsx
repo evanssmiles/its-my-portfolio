@@ -42,14 +42,16 @@ const Navbar = () => {
     <div
       className={
         shadow
-          ? 'fixed z-[100] h-20 w-full bg-[#ecf0f3] shadow-xl transition-colors duration-300 ease-in-out'
+          ? 'fixed z-[100] h-20 w-full transition-colors duration-300 ease-in-out md:bg-[#ecf0f3] md:shadow-xl'
           : 'fixed z-[100] h-20 w-full transition-colors duration-300 ease-in-out'
       }
     >
       <div className="relative flex h-full w-full items-center justify-between px-4 sm:px-6 md:w-[62%] md:px-10 lg:w-[64%] lg:px-16">
         <Link
           href="/#home"
-          className={`${caveat.className} text-3xl font-bold transition-colors duration-300 ${textColor}`}
+          className={`${caveat.className} text-3xl font-bold transition-colors duration-300 ${textColor} ${
+            shadow ? 'hidden md:block' : 'block'
+          }`}
         >
           Naufal Hendrawan
         </Link>

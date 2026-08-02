@@ -77,7 +77,7 @@ export default function NavbarMobileMenu({ shadow }: NavbarMobileMenuProps) {
         type="button"
         aria-label={nav ? 'Close menu' : 'Open menu'}
         onClick={handleNav}
-        className={`relative z-[110] flex h-11 w-11 cursor-pointer touch-manipulation items-center justify-center rounded-full bg-none ${circleBg} transition-colors duration-300 md:hidden`}
+        className={`relative z-[110] ml-auto flex h-11 w-11 cursor-pointer touch-manipulation items-center justify-center rounded-full bg-none ${circleBg} transition-colors duration-300 md:hidden`}
       >
         {nav ? (
           <AiOutlineClose
@@ -95,7 +95,7 @@ export default function NavbarMobileMenu({ shadow }: NavbarMobileMenuProps) {
       {/* Fullscreen circular-reveal menu overlay */}
       <div
         ref={overlayRef}
-        className="fixed inset-0 z-[95] flex items-center bg-[#ecf0f3] md:hidden"
+        className="pointer-events-none fixed inset-0 z-[95] flex items-center bg-[#ecf0f3] [clip-path:circle(0%_at_100%_0%)] md:hidden"
       >
         <div className="w-full px-8">
           <ul className="flex flex-col gap-2">
