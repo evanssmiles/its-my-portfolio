@@ -64,6 +64,7 @@ export default function Main() {
   return (
     <div
       id="home"
+      data-navbar-theme="dark"
       className="relative h-screen w-full overflow-hidden bg-[#0a0a0a]"
     >
       {/* Right gradient panel — full height, full bleed, sits behind everything */}
