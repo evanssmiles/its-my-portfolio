@@ -41,7 +41,6 @@ export default function SmoothScroll() {
       sessionStorage.setItem(SCROLL_KEY, String(scroll))
       ScrollTrigger.update()
     })
-
     // Use GSAP own ticker
     gsap.ticker.add((time) => {
       lenis.raf(time * 1000)
@@ -50,11 +49,35 @@ export default function SmoothScroll() {
 
     window.addEventListener('load', () => ScrollTrigger.refresh())
 
+    const handleAnchorClick = (e: MouseEvent) => {
+      const anchor = (e.target as HTMLElement).closest('a')
+      if (!anchor) return
+
+      const href = anchor.getAttribute('href')
+      if (!href) return
+
+      const hashIndex = href.indexOf('#')
+      if (hashIndex === -1) return
+
+      const path = href.slice(0, hashIndex)
+      if (path && path !== '/' && path !== window.location.pathname) return
+
+      const hash = href.slice(hashIndex)
+      const target = document.querySelector(hash)
+      if (!target) return
+
+      e.preventDefault()
+      lenis.scrollTo(target as HTMLElement, { offset: -80 })
+    }
+
+    document.addEventListener('click', handleAnchorClick)
+
     return () => {
       lenis.destroy()
       gsap.ticker.remove((time) => {
         lenis.raf(time * 1000)
       })
+      document.removeEventListener('click', handleAnchorClick)
     }
   }, [])
 
