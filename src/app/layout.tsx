@@ -3,6 +3,7 @@ import { Geist, Geist_Mono, Plus_Jakarta_Sans } from 'next/font/google'
 import '@/app/styles/globals.css'
 import CursorRipple from './components/CursorRipple'
 import SmoothScroll from './components/SmoothScroll'
+import Footer from './components/Footer'
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -39,6 +40,7 @@ export default function RootLayout({
         <SmoothScroll />
         <CursorRipple />
         {children}
+        <Footer />
       </body>
     </html>
   )
