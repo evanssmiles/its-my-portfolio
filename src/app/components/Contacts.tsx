@@ -69,7 +69,7 @@ export default function Contact() {
       data-navbar-theme="dark"
       className="relative flex w-full scroll-mt-20 items-center overflow-hidden bg-[#0a0a0a] px-[20px] py-24 md:min-h-screen md:px-8 lg:px-16"
     >
-      <div className="mx-auto w-full max-w-[1240px] text-center xl:max-w-[1440px] 2xl:max-w-[1560px]">
+      <div className="mx-auto w-full max-w-[1240px] pt-40 pb-20 text-center xl:max-w-[1440px] 2xl:max-w-[1560px]">
         <p
           ref={eyebrowRef}
           className="text-sm font-semibold tracking-[0.2em] text-[#ff6b4a] uppercase"
