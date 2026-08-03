@@ -2,7 +2,7 @@
 
 import { useEffect, useRef } from 'react'
 import Link from 'next/link'
-import { AiOutlineArrowRight } from 'react-icons/ai'
+import { AiOutlineDownload } from 'react-icons/ai'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import aboutMe from '../data/aboutMe'
@@ -170,8 +170,8 @@ export default function About() {
               <p className="text-sm text-gray-500">Years Experience</p>
             </div>
             <div>
-              <p className="text-3xl font-bold text-[#1f2937]">5+</p>
-              <p className="text-sm text-gray-500">Products Contributed To</p>
+              <p className="text-3xl font-bold text-[#1f2937]">10+</p>
+              <p className="text-sm text-gray-500">Projects Contributed To</p>
             </div>
             <div>
               <p className="text-3xl font-bold text-[#1f2937]">4</p>
@@ -180,12 +180,12 @@ export default function About() {
           </div>
 
           <div ref={ctaRef}>
-            <Link href={'/#projects'}>
+            <a href="/resume.pdf" download>
               <button className="mt-6 flex items-center gap-2 px-6 py-3 text-sm transition-transform duration-300 hover:scale-105">
-                View My Projects
-                <AiOutlineArrowRight size={16} />
+                <AiOutlineDownload className="animate-bounce" size={16} />
+                Download Resume
               </button>
-            </Link>
+            </a>
           </div>
         </div>
 

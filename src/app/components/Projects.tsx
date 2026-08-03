@@ -88,7 +88,7 @@ export default function Projects() {
           ref={headingRef}
           className="max-w-[700px] py-2 text-4xl leading-[1.1] font-bold text-[#1f2937] sm:text-5xl md:text-6xl"
         >
-          A few products I`ve helped build.
+          A few projects I`ve helped build.
         </h2>
 
         <div
@@ -140,7 +140,7 @@ export default function Projects() {
             <div className="relative flex items-center">
               <span className="absolute left-0 h-16 w-16 rounded-full bg-gray-200 transition-colors duration-300" />
               <p className="relative z-10 pl-9 text-sm font-semibold tracking-[0.2em] text-[#1f2937] uppercase group-hover:text-[#ff6b4a]">
-                View More Work
+                View More Projects
               </p>
               <span className="relative z-10 ml-3 text-xl font-light text-[#1f2937]">
                 +
