@@ -74,7 +74,7 @@ export default function NavbarMobileMenu({ shadow }: NavbarMobileMenuProps) {
         type="button"
         aria-label={nav ? 'Close menu' : 'Open menu'}
         onClick={handleNav}
-        className={`relative z-[110] ml-auto flex h-11 w-11 cursor-pointer touch-manipulation items-center justify-center rounded-full bg-none ${circleBg} transition-colors duration-300 md:hidden`}
+        className={`relative z-[110] ml-auto flex h-11 w-11 cursor-pointer touch-manipulation items-center justify-center rounded-full bg-none shadow-none ${circleBg} transition-colors duration-300 md:hidden`}
       >
         {nav ? (
           <AiOutlineClose
