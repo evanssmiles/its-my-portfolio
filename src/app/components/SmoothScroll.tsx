@@ -1,6 +1,7 @@
 'use client'
 
-import { useEffect } from 'react'
+import { useEffect, useRef } from 'react'
+import { usePathname } from 'next/navigation'
 import Lenis from 'lenis'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
@@ -10,6 +11,10 @@ gsap.registerPlugin(ScrollTrigger)
 const SCROLL_KEY = 'scrollY'
 
 export default function SmoothScroll() {
+  const pathname = usePathname()
+  const lenisRef = useRef<Lenis | null>(null)
+  const isFirstRender = useRef(true)
+
   useEffect(() => {
     if ('scrollRestoration' in window.history) {
       window.history.scrollRestoration = 'manual'
@@ -33,6 +38,7 @@ export default function SmoothScroll() {
       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
       smoothWheel: true,
     })
+    lenisRef.current = lenis
 
     // Sync Lenis's internal position to match the restored position
     lenis.scrollTo(restoreY, { immediate: true })
@@ -75,20 +81,30 @@ export default function SmoothScroll() {
       lenis.scrollTo(targetPosition, { duration: 1.2 })
     }
 
-    // Capture phase (the `true` argument) — ensures this handler runs
-    // BEFORE Next.js's own <Link> click handling, so our preventDefault()
-    // always wins the race instead of Next's default same-page hash
-    // scroll potentially overriding our offset-aware scroll afterward.
     document.addEventListener('click', handleAnchorClick, true)
 
     return () => {
       lenis.destroy()
+      lenisRef.current = null
       gsap.ticker.remove((time) => {
         lenis.raf(time * 1000)
       })
       document.removeEventListener('click', handleAnchorClick, true)
     }
   }, [])
+
+  // Reset scroll to the top whenever the route actually changes (e.g. when navigating to a new page)
+  useEffect(() => {
+    if (isFirstRender.current) {
+      isFirstRender.current = false
+      return
+    }
+
+    sessionStorage.removeItem(SCROLL_KEY)
+    lenisRef.current?.scrollTo(0, { immediate: true })
+    window.scrollTo(0, 0)
+    requestAnimationFrame(() => ScrollTrigger.refresh())
+  }, [pathname])
 
   return null
 }
