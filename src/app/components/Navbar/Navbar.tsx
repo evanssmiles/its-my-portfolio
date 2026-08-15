@@ -12,7 +12,7 @@ const Navbar = () => {
   const [shadow, setShadow] = useState(false)
   useEffect(() => {
     const NAVBAR_HEIGHT = 80 // matches h-20
-    const CHECK_POINT = NAVBAR_HEIGHT / 2 // approx the navbar's vertical cente
+    const CHECK_POINT = NAVBAR_HEIGHT / 2 // approx the navbar's vertical center
 
     const handleShadow = () => {
       const darkSections = document.querySelectorAll<HTMLElement>(

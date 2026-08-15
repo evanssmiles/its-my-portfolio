@@ -63,21 +63,30 @@ export default function SmoothScroll() {
       if (path && path !== '/' && path !== window.location.pathname) return
 
       const hash = href.slice(hashIndex)
-      const target = document.querySelector(hash)
+      const target = document.querySelector(hash) as HTMLElement | null
       if (!target) return
 
       e.preventDefault()
-      lenis.scrollTo(target as HTMLElement, { offset: -80 })
+
+      const NAVBAR_HEIGHT = 0
+      const targetPosition =
+        target.getBoundingClientRect().top + window.scrollY - NAVBAR_HEIGHT
+
+      lenis.scrollTo(targetPosition, { duration: 1.2 })
     }
 
-    document.addEventListener('click', handleAnchorClick)
+    // Capture phase (the `true` argument) — ensures this handler runs
+    // BEFORE Next.js's own <Link> click handling, so our preventDefault()
+    // always wins the race instead of Next's default same-page hash
+    // scroll potentially overriding our offset-aware scroll afterward.
+    document.addEventListener('click', handleAnchorClick, true)
 
     return () => {
       lenis.destroy()
       gsap.ticker.remove((time) => {
         lenis.raf(time * 1000)
       })
-      document.removeEventListener('click', handleAnchorClick)
+      document.removeEventListener('click', handleAnchorClick, true)
     }
   }, [])
 

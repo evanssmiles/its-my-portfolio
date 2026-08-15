@@ -24,7 +24,13 @@ export const projects: Project[] = [
   {
     name: 'Ruparupa',
     description: 'Multi-brand e-commerce marketplace for home essentials.',
-    tech: ['React Native', 'TypeScript'],
+    tech: [
+      'React Native',
+      'TypeScript',
+      'Payment Gateway Integration',
+      'Maps Integration',
+      'Firebase',
+    ],
     image: RuparupaImg,
   },
   {
