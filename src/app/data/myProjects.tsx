@@ -5,6 +5,7 @@ import RuparupaImg from '../../../public/assets/ruparupa.jpeg'
 import InformaImg from '../../../public/assets/informa.jpeg'
 import MaimaidImg from '../../../public/assets/maimaid.jpeg'
 import VcgamersImg from '../../../public/assets/vcgamers.jpeg'
+import PortfolioImg from '../../../public/assets/custom-portfolio.jpeg'
 
 export type Project = {
   name: string
@@ -116,5 +117,19 @@ export const projects: Project[] = [
       playStore:
         'https://play.google.com/store/apps/details?id=com.vcgamers.apps&hl=id',
     },
+  },
+  {
+    name: 'Custom Portfolio Project',
+    description:
+      'This portfolio itself, a hand-built, editorial-style personal site with scroll-driven motion design. It is built with Next.js, TypeScript, Tailwind CSS, GSAP, and Lenis for smooth scrolling and animations.',
+    tech: ['Next.js', 'TypeScript', 'Tailwind CSS', 'GSAP', 'Lenis'],
+    keyFeatures: [
+      'Smooth-scroll experience powered by Lenis, synced with GSAP ScrollTrigger',
+      'Scroll-triggered reveal animations across hero, about, and project sections',
+      'Custom cursor ripple interaction and editorial dark theme with orange accents',
+      'Fully responsive, App Router-based architecture with reusable animated components',
+    ],
+    image: PortfolioImg,
+    code: 'https://github.com/evanssmiles/portfolio-template',
   },
 ]
