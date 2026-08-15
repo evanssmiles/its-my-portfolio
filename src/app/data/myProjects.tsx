@@ -6,7 +6,7 @@ import InformaImg from '../../../public/assets/informa.jpeg'
 import MaimaidImg from '../../../public/assets/maimaid.jpeg'
 import VcgamersImg from '../../../public/assets/vcgamers.jpeg'
 
-type Project = {
+export type Project = {
   name: string
   description: string
   tech: string[]
