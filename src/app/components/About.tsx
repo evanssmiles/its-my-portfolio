@@ -179,14 +179,14 @@ export default function About() {
             </div>
           </div>
 
-          <div ref={ctaRef}>
+          {/* <div ref={ctaRef}>
             <a href="/resume.pdf" download>
               <button className="mt-6 flex items-center gap-2 px-6 py-3 text-sm transition-transform duration-300 hover:scale-105">
                 <AiOutlineDownload className="animate-bounce" size={16} />
                 Download Resume
               </button>
             </a>
-          </div>
+          </div> */}
         </div>
 
         {/* Services Section */}

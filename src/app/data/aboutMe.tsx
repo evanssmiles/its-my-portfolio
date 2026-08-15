@@ -37,7 +37,7 @@ const services = [
     number: '01',
     title: 'Frontend Development',
     description:
-      'I craft clean, responsive, and pixel-perfect interfaces using ReactJS and Next.js — focused on performance, accessibility, and a seamless user experience.',
+      'I craft clean, responsive, and pixel-perfect interfaces using ReactJS and Next.js focused on performance, accessibility, and a seamless user experience.',
   },
   {
     number: '02',

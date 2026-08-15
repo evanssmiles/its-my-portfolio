@@ -10,7 +10,14 @@ type Project = {
   name: string
   description: string
   tech: string[]
+  keyFeatures: string[]
   image: StaticImageData
+  live?: {
+    web?: string
+    playStore?: string
+    appStore?: string
+  }
+  code?: string
 }
 
 export const projects: Project[] = [
@@ -19,7 +26,18 @@ export const projects: Project[] = [
     description:
       'An internal sales tool used by in-store staff to assist customers purchasing Informa or Ruparupa products.',
     tech: ['React Native', 'TypeScript'],
+    keyFeatures: [
+      'In-store product consultation flow',
+      'Cross-brand catalog browsing (Informa & Ruparupa)',
+      'Staff-assisted checkout',
+    ],
     image: StoremodeImg,
+    live: {
+      playStore:
+        'https://play.google.com/store/apps/details?id=com.ruparupa.storemode.android&hl=id',
+      appStore:
+        'https://apps.apple.com/id/app/storemode-by-ruparupa/id1526000239',
+    },
   },
   {
     name: 'Ruparupa',
@@ -31,26 +49,72 @@ export const projects: Project[] = [
       'Maps Integration',
       'Firebase',
     ],
+    keyFeatures: [
+      'Multi-brand product catalog',
+      'Integrated payment gateway checkout',
+      'Store locator with maps integration',
+      'Push notifications via Firebase and MoEngage',
+    ],
     image: RuparupaImg,
+    live: {
+      playStore:
+        'https://play.google.com/store/apps/details?id=com.mobileappruparupa&hl=id',
+      appStore: 'https://apps.apple.com/id/app/ruparupa/id1324434624',
+    },
   },
   {
     name: 'Informa',
     description:
       "Informa's own-brand app, exclusively selling Informa furniture products.",
-    tech: ['React Native', 'TypeScript'],
+    tech: [
+      'React Native',
+      'TypeScript',
+      'Payment Gateway Integration',
+      'Maps Integration',
+      'Firebase',
+    ],
+    keyFeatures: [
+      'Dedicated single-brand shopping experience',
+      'Product configurator for furniture options',
+      'Wishlist and order tracking',
+    ],
     image: InformaImg,
+    live: {
+      playStore:
+        'https://play.google.com/store/apps/details?id=mobi.mobileforce.informa&hl=id',
+      appStore: 'http://apps.apple.com/id/app/informa/id1182293866',
+    },
   },
   {
     name: 'MaiMaid',
     description:
       'A booking and ordering service for household assistance, built for Android and iOS.',
     tech: ['Flutter', 'Dart'],
+    keyFeatures: [
+      'Real-time booking and scheduling',
+      'Service provider matching',
+      'In-app order tracking and history',
+    ],
     image: MaimaidImg,
+    live: {
+      playStore:
+        'https://play.google.com/store/apps/details?id=com.maimaid.customer_app&hl=id',
+      appStore: 'https://apps.apple.com/id/app/maimaid/id1531870910',
+    },
   },
   {
     name: 'VCGamers',
     description: 'A next-generation gaming-focused social commerce platform.',
     tech: ['React Native', 'TypeScript'],
+    keyFeatures: [
+      'In-game top-up and voucher marketplace',
+      'Social feed for gamers',
+      'Instant transaction processing',
+    ],
     image: VcgamersImg,
+    live: {
+      playStore:
+        'https://play.google.com/store/apps/details?id=com.vcgamers.apps&hl=id',
+    },
   },
 ]
